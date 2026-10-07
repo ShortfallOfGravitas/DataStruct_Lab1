@@ -12,4 +12,4 @@ function  generateSeq(n, currentSeq = "") {
 
 }
 
-generateSeq(5);
+generateSeq(5);     //виклик для 5-ти ячейок
