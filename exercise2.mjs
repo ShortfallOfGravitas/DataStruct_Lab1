@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 function  generateSeq(n, currentSeq = "", results = []) {
-    //базовий випадкок, умова для зупинки
+    //базовий випадок, умова для зупинки
     if(currentSeq.length === n){
         results.push(currentSeq);
         return results;
@@ -17,10 +17,10 @@ function  generateSeq(n, currentSeq = "", results = []) {
 
 }
 
-function writeFile(res_arr) {
-    const allCombinations = generateSeq(5);     //виклик для 5-ти ячейок
+function writeFile() {
+    const allCombinations = generateSeq(5);     //виклик для 5 комірок
 
-    const outputDir = path.join(import.meta.dirname, 'outputs');
+    const outputDir = path.join(import.meta.dirname, 'outputs');  //import.meta.dirname - вбудована змінна Node.js яка містить абсолютний шлях до репо проєкту
     fs.mkdirSync(outputDir, {recursive: true});
 
     const filePath = path.join(outputDir, 'lab01_task2.json');
