@@ -17,6 +17,16 @@ function  generateSeq(n, currentSeq = "", results = []) {
 
 }
 
-const allCombinations = generateSeq(5);     //виклик для 5-ти ячейок
+function writeFile(res_arr) {
+    const allCombinations = generateSeq(5);     //виклик для 5-ти ячейок
 
-const outputDir =
+    const outputDir = path.join(import.meta.dirname, 'outputs');
+    fs.mkdirSync(outputDir, {recursive: true});
+
+    const filePath = path.join(outputDir, 'lab01_task2.json');
+    fs.writeFileSync(filePath, JSON.stringify(allCombinations, null, 2));
+
+    console.log(`Успішно збережено ${allCombinations.length} комбінацій у ${filePath}`);
+}
+
+writeFile();
