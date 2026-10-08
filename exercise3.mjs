@@ -1,4 +1,5 @@
 //краще реалізувати через відсікання гілок (pruning)
+//застосовуючи if (currentSeq.includes(i.toString())) всередині for циклу який керує рекурсивними викликами
 
 import fs from 'fs';
 import path from 'path';
