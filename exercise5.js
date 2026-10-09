@@ -22,6 +22,7 @@ function findPath(i, j, count){
         }
 
         isExitFound = true;     //відмічаємо, що вихід знайдено
+        return;
     }
 
     //базовий випадок 2: це стіна чи ми вже тут були?
@@ -42,7 +43,10 @@ function findPath(i, j, count){
 }
 
 findPath(1, 1, 0);
-console.log("Найкоротший шлях:", minSteps);
+
+if(minSteps !== Infinity) {
+    console.log("Найкоротший шлях:", minSteps);
+}
 if(!isExitFound){
     console.log("Виходу немає!");
 }
