@@ -12,6 +12,7 @@ const map = [
 ];
 
 let lakeCount = 0;
+let counter = 0;
 
 function floodFill(i, j){
     //базовий випадок 1, перевірка на межі мапи
