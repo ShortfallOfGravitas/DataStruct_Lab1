@@ -15,7 +15,7 @@ let maxLength = 0;      //поточний рекорд довжини
 
 //запобіжник
 let iterations = 0;
-const maxIterations = 20000000;
+const maxIterations = 100000000;    //100-М ітерацій обмеження
 
 function calculatePerfect(){
     for(let i = 0; i < 8; i++){
