@@ -13,7 +13,7 @@ const map = [
 
 let lakeCount = 0;
 
-function floodFill(i, j, count){
+function floodFill(i, j){
     //базовий випадок 1, перевірка на межі мапи
     if( i < 0 || i > 9 || j < 0 || j > 9 ) return;
     //базовий випадок 2, перевірка вже пройдених клітинок
@@ -21,13 +21,23 @@ function floodFill(i, j, count){
 
     map[i][j] = 2;
 
-    floodFill(i-1, j, count);   //up
-    floodFill(i+1, j, count);   //down
-    floodFill(i, j-1, count);   //left
-    floodFill(i, j+1, count);   //right
-
+    floodFill(i-1, j);   //up
+    floodFill(i+1, j);   //down
+    floodFill(i, j-1);   //left
+    floodFill(i, j+1);   //right
 }
 
 function scanMap(){
+    for(let i = 0; i < 10; i++){
+        for(let j = 0; j < 10; j++){
+            if(map[i][j] === 0){
+                lakeCount++;
+                floodFill(i, j);
+            }
+        }
+    }
 
+    console.log(`Кількість озер на карті: ${lakeCount}`);
 }
+
+scanMap();
