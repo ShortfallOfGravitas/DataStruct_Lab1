@@ -9,7 +9,7 @@ function  generateSeq(n, currentSeq = "", results = []) {
     }
 
    //цикл замість прописування викликів вручну
-    for (let i = 1; i <= 5; i++){
+    for (let i = 0; i < 5; i++){
         generateSeq(n, currentSeq + i, results);
     }
 
